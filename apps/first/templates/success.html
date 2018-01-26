@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success Page</title>
+</head>
+<body>
+
+    <h1>Hello, {{request.session.name}}!</h1>
+
+    <p>Successfully registered and/or logged in!</p>
+    
+    {% load staticfiles %}
+    
+    <h4>Your Trip Schedules</h4>
+    <table>
+        <tr>
+            <th>Destination</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            <th>Plan</th>
+        </tr>
+        <tr>
+            {% for user in users %}
+            <td>{{trip_user.destination}}</td>
+            <td>{{user.startdate}}</td>
+            <td>{{user.enddate}}</td>
+            <td>{{user.plan}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h4>Other User's Travel Plans</h4>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>Travel Start Date</th>
+            <th>Travel End Date</th>
+            <th>Do You Want to Join?</th>
+        </tr>
+        <tr>
+            {% for traveller in travellers %}
+            <td>{{trip.traveller}}</td>
+            <td>{{traveller_destination}}</td>
+            <td>{{traveller.startdate}}</td>
+            <td>{{traveller.enddate}}</td>
+            <td><form action="{{ traveller_destination }}" method="get"><input type="submit" value="Join!"></form></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

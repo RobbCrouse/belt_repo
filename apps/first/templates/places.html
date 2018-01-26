@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destination Template</title>
+</head>
+<body>
+    <h1>{{ trip.destination }}</h1>
+    {% for user in users %}
+        <p>Planned By: {{user.name}}</p>
+        <p>Description: {{user.plan}}</p>
+        <p>Travel Date From: {{user.startdate}}</p>
+        <p>Travel Date To: {{user.enddate}}</p>
+    {% endfor %}
+
+    <h2>Other Users' joining the trip:</h2>
+    {% for trip in trips %}
+
+        While trip.traveller == 
+
+<!-- trying to compare User's trip plans to Other User's joining the trip
+    for a conditional display. -->
+        <p>{{ for trip.traveller </p>
+    
+
+
+
+</body>
+</html>
